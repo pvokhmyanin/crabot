@@ -1,9 +1,11 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 from ws4py.client.threadedclient import WebSocketClient
 import json
 import requests
 import ast
 import pprint
+import re
 
 #import username, password and channel_id from config_crabot.py
 from config_crabot import *
@@ -19,7 +21,7 @@ class ggClient(WebSocketClient):
     def opened(self):
         print "Connecting to channel %d..." % channel_id
 
-        join_message = json.dumps({"type":"join","data":{"channel_id":channel_id,"hidden":False}})
+        join_message = json.dumps({"type":"join","data":{"channel_id":channel_id,"hidden":True}})
         get_userlist = json.dumps({"type":"get_users_list2","data":{"channel_id":channel_id}})
         leave_message = json.dumps({"type":"unjoin","data":{"channel_id":channel_id}})
 
@@ -58,6 +60,13 @@ class ggClient(WebSocketClient):
                 user_stat[user]["messages"] = 1
                 user_stat[user]["money"] = 0
             print "%s[#%d,$%d]: %s" % (user, user_stat[user]["messages"], user_stat[user]["money"], recv_json["data"]["parsed"])
+            crab_pattern = re.compile(".*:crab:.*")
+            if crab_pattern.match(recv_json["data"]["parsed"]):
+                send_text = u"%s, На этом канале крабы - священные животные. Пожалуйста воздержитесь от упоминания их в негативном свете." % user
+                crab_warn_message = json.dumps({"type":"send_message","data":{"channel_id":channel_id,"text":send_text,"hideIcon": False,"mobile":False}})
+                self.send(crab_warn_message)
+                del_message = json.dumps({"type":"remove_message","data":{"channel_id":channel_id,"message_id":recv_json["data"]["message_id"]}})
+                self.send(del_message)
         else:
             if recv_json["type"] != "channel_counters":
                 print json.dumps(recv_json)
