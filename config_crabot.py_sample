@@ -1,2 +1,22 @@
-login = "username"
-password = "password"
+# -*- coding: utf-8 -*-
+# Connection settings
+username = <..>
+password = <..>
+channel_id = 100960
+channel_name = u"destroer1990"
+
+# Chatbot settings
+cradict_path = "crabot_dictionary.txt"
+userstat_path = "userstat.txt"
+throttling_default = 10
+pings_to_greet_users_default = 2
+greet_threshold = 3600
+
+# Stream wallet settings
+donation_cashback_percent = 10
+messages_for_money = 10
+starting_money = 0
+
+# Response templates
+greet_message_template = u" добро пожаловать на стрим %s!" % channel_name
+donation_thanks_template = u", от души! :charisma: Спасибо!"

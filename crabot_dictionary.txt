@@ -1,0 +1,52 @@
+##########
+# Legend #
+##########
+# + pattern - pattern we check, channelname/botname should not be included here, see options nelow
+# + response - response we send, recepient name should not be included here, see options nelow
+# + dodelete - remove message matching pattern, or not
+# | \
+# | |- dodelete = 1 - remove message
+# | L- dodelete : 0 - do not remove
+# + doreply - used to compose reply
+# | \
+# | |- doreply : 0 - reply to all
+# | |- doreply = 1 - reply to sender
+# | L- doreply = 2 - reply to streamer
+# + address - used for pattern compilation
+# | \
+# | |- address : 0 - check messages for all recepients
+# | |- address = 1 - compile channelname into pattern
+# | L- address = 2 - compile botname into pattern
+# + lastused - just a temp variable to store last invokation of the pattern
+# L throttling - time interval for pattern activation
+#   \ 
+#   |- throttling = -1 - no throttling
+#   |- throttling : 0 - default throttling, value from config_crabot.py
+#   L- throttling = X - custom throttling, X seconds
+
+
+{"pattern" : u".*:crab:.*|.*:fight:.*|.*крабит.*", "response" : u"крабы - священные животные. Пожалуйста воздержитесь от упоминания их в негативном свете.", "doreply" : 1, "dodelete" : 1, "address": 0, "throttling" : 0, "lastused" : 0 }
+
+# word reactions
+{"pattern" : u".*где квесты.*", "response" : u"кстати да, где квесты?", "doreply" : 2, "dodelete" : 0, "address": 1, "throttling" : 0, "lastused" : 0 }
+{"pattern" : [ u".*пердак.*", u".*пердачел.*"] , "response" : u"вот зачем так выражаться? Мы же воспитанные люди! Есть замечательное литературное слово \"гузно\"!", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
+{"pattern" : u".*гузно.*", "response" : u"сразу видно воспитанного человека! Такие слова красивые знает.", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
+{"pattern" : [ u".*ninja gaiden.*", u".*нинджа гайден.*", u".*ниндзя гайден.*" ], "response" : u"свят свят :exorcism:", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
+{"pattern" : u".*сложна.*", "response" : u"непонятна!", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
+{"pattern" : [ u".*сиськи.*", u".*сиски.*", u".*сисяндр.*", u".*титьки.*" ], "response" : u"сииськи... :homer:", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
+
+# smile reactions
+{"pattern" : u".*:poo:.*", "response" : u":poo:", "doreply" : 1, "dodelete" : 0, "address": 2, "throttling" : 0, "lastused" : 0 }
+{"pattern" : u":charisma:", "response" : u":charisma:", "doreply" : 1, "dodelete" : 0, "address": 2, "throttling" : 0, "lastused" : 0, "lastused" : 0 }
+{"pattern" : u":tactics:", "response" : u" Ничего вы не понимаете. Тактический гений нашего главнокомандующего не поддается осмыслению простыми смертными.", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
+{"pattern" : u".*:cry:.*", "response" : u"побереги слёзы, они тебе ещё пригодятся... :verybad:", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
+{"pattern" : u":joker:", "response" : u":joker:", "doreply" : 0, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
+{"pattern" : u":slow:", "response" : u":slow:", "doreply" : 0, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
+{"pattern" : u":verybad:", "response" : u":verybad:", "doreply" : 0, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
+
+# Камень-Ножницы-Бумага
+{"pattern" : [ u".*:rock:.*", u".*:scissors:.*", u".*:paper:.*"], "response" : u":rock:", "doreply" : 1, "dodelete" : 0, "address": 2, "throttling" : 3, "lastused" : 0 }
+
+# muton - marik reactions
+#{"pattern" : u":marik:", "response" : u":muton:", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0 }
+#{"pattern" : u":muton:", "response" : u":marik:", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0 }
