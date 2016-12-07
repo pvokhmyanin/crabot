@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+# Connection settings
+username = u"%bot_login%"
+password = "%password%"
+channel_name = u"NafanyaShow"
+channel_user_id = 457651
+
+# Chatbot settings
+cradict_path = "crabot_dictionary.txt"
+userstat_path = "userstat.txt"
+throttling_default = 10
+pings_to_greet_users_default = 2
+greet_threshold = 3600
+crabot_debug = 0
+
+# Stream wallet settings
+donation_cashback_percent = 10
+messages_for_money = 10
+starting_money = 0
+
+# Response templates
+throttling_response_template = u"утомили меня, дай передохнуть..."
+greet_message_template = u"Новые зрители: "
+donation_thanks_template = u"от души! :charisma: Спасибо!"

@@ -25,7 +25,7 @@
 #   L- throttling = X - custom throttling, X seconds
 
 
-{"pattern" : u".*:crab:.*|.*:fight:.*|.*крабит.*", "response" : u"крабы - священные животные. Пожалуйста воздержитесь от упоминания их в негативном свете.", "doreply" : 1, "dodelete" : 1, "address": 0, "throttling" : 0, "lastused" : 0 }
+{"pattern" : u".*:crab:.*|.*:fight:.*|.*крабит.*", "response" : u"крабы - священные животные. Давайте без грязи.", "doreply" : 1, "dodelete" : 1, "address": 0, "throttling" : 0, "lastused" : 0 }
 
 # word reactions
 {"pattern" : u".*где квесты.*", "response" : u"кстати да, где квесты?", "doreply" : 2, "dodelete" : 0, "address": 1, "throttling" : 0, "lastused" : 0 }
@@ -36,13 +36,15 @@
 {"pattern" : [ u".*сиськи.*", u".*сиски.*", u".*сисяндр.*", u".*титьки.*" ], "response" : u"сииськи... :homer:", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
 
 # smile reactions
-{"pattern" : u".*:poo:.*", "response" : u":poo:", "doreply" : 1, "dodelete" : 0, "address": 2, "throttling" : 0, "lastused" : 0 }
-{"pattern" : u":charisma:", "response" : u":charisma:", "doreply" : 1, "dodelete" : 0, "address": 2, "throttling" : 0, "lastused" : 0, "lastused" : 0 }
-{"pattern" : u":tactics:", "response" : u" Ничего вы не понимаете. Тактический гений нашего главнокомандующего не поддается осмыслению простыми смертными.", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
-{"pattern" : u".*:cry:.*", "response" : u"побереги слёзы, они тебе ещё пригодятся... :verybad:", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
-{"pattern" : u":joker:", "response" : u":joker:", "doreply" : 0, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
-{"pattern" : u":slow:", "response" : u":slow:", "doreply" : 0, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
-{"pattern" : u":verybad:", "response" : u":verybad:", "doreply" : 0, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
+{"pattern" : u".*:poo:.*", "response" : u":poo:", "doreply" : 1, "dodelete" : 0, "address": 2, "throttling" : 60, "lastused" : 0 }
+{"pattern" : u":charisma:", "response" : u":charisma:", "doreply" : 1, "dodelete" : 0, "address": 2, "throttling" : 60, "lastused" : 0, "lastused" : 0 }
+{"pattern" : u":nichobobr:", "response" : u":nichobobr:", "doreply" : 1, "dodelete" : 0, "address": 2, "throttling" : 60, "lastused" : 0, "lastused" : 0 }
+{"pattern" : u".*привет.*", "response" : u"дратути :daun:", "doreply" : 1, "dodelete" : 0, "address": 2, "throttling" : 60, "lastused" : 0, "lastused" : 0 }
+#{"pattern" : u":tactics:", "response" : u" Ничего вы не понимаете. Тактический гений нашего главнокомандующего не поддается осмыслению простыми смертными.", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 60, "lastused" : 0 }
+#{"pattern" : u".*:cry:.*", "response" : u"побереги слёзы, они тебе ещё пригодятся... :verybad:", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 60, "lastused" : 0 }
+{"pattern" : u":joker:", "response" : u":joker:", "doreply" : 0, "dodelete" : 0, "address": 0, "throttling" : 60, "lastused" : 0 }
+#{"pattern" : u":slow:", "response" : u":slow:", "doreply" : 0, "dodelete" : 0, "address": 0, "throttling" : 0, "lastused" : 0 }
+{"pattern" : u":verybad:", "response" : u":verybad:", "doreply" : 0, "dodelete" : 0, "address": 0, "throttling" : 60, "lastused" : 0 }
 
 # Камень-Ножницы-Бумага
 {"pattern" : [ u".*:rock:.*", u".*:scissors:.*", u".*:paper:.*"], "response" : u":rock:", "doreply" : 1, "dodelete" : 0, "address": 2, "throttling" : 3, "lastused" : 0 }
@@ -50,3 +52,6 @@
 # muton - marik reactions
 #{"pattern" : u":marik:", "response" : u":muton:", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0 }
 #{"pattern" : u":muton:", "response" : u":marik:", "doreply" : 1, "dodelete" : 0, "address": 0, "throttling" : 0 }
+
+# very last pattern - "fallback" for all bot patterns
+#{"pattern" : u".*", "response" : u"погоди, чуток занят, потом отвечу :daun:", "doreply" : 1, "dodelete" : 0, "address": 2, "throttling" : 60, "lastused" : 0, "lastused" : 0 }
